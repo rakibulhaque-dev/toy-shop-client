@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 // import img from '../../assets/images/login/login.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../Providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProvider';
 
 
 const Login = () => {
@@ -23,6 +23,7 @@ const Login = () => {
                 const loggedUser = {
                     email: user.email
                 }
+                navigate(from, { replace: true })
                 console.log(loggedUser)
 
                 // TODO: jwt 

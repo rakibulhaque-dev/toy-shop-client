@@ -1,14 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
+import NavBar from '../Shared/Navbar/Navbar';
+// import ShopSection from '../ShopSection/ShopSection';
 
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
-            <h2 className='text-center text-orange-700'>This is HOME</h2>
+            <NavBar></NavBar>
             <Outlet></Outlet>
+            {/* <ShopSection></ShopSection> */}
             <Footer></Footer>
         </div>
     );

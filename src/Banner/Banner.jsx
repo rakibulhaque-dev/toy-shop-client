@@ -11,7 +11,7 @@ const Banner = () => {
                     Molestias, ex. Voluptas facere dicta laborum, ot eveniet perferendis sit nostrum, nesciunt esse. Reiciendis ipsum beatae minus illum.</p>
                     <Link className='p-4 mt-3 font-bold btn btn-secondary'>Learn More</Link>
                 </div>
-                <img className='w-auto h-96' src={ToyBanner} alt="" />
+                <img className='w-96 h-72' src={ToyBanner} alt="" />
             </div>
         </div>
     );
