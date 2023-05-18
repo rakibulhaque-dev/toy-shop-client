@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import ShopSection from "../ShopSection/ShopSection";
 import ToyDetails from "../ShopSection/ToyDetails";
 import Blog from "../Pages/Blog/Blog";
+import MyToy from "../Pages/MyToy/MyToy";
 
   const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ import Blog from "../Pages/Blog/Blog";
           },
           {
             path: '/addtoy',
-            element: <AddToys></AddToys>,
+            element: <PrivateRoute> <AddToys></AddToys> </PrivateRoute>,
             loader: () => fetch('http://localhost:5000/toys')
           },
           {
@@ -38,6 +39,10 @@ import Blog from "../Pages/Blog/Blog";
           {
             path: '/blogs',
             element: <Blog></Blog>
+          },
+          {
+            path: '/mytoys',
+            element: <PrivateRoute> <MyToy></MyToy> </PrivateRoute>
           }
         ],
     },
@@ -46,7 +51,7 @@ import Blog from "../Pages/Blog/Blog";
       element: <Login></Login>
     },
     {
-      path: 'signup',
+      path: '/signup',
       element: <Register></Register>
     }
   ]);

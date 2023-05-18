@@ -2,7 +2,7 @@ import React from 'react';
 
 const Stats = () => {
     return (
-        <div className="container py-24 mx-auto mt-4 bg-white border rounded-md shadow-lg sm:py-32">
+        <div className="container py-24 mx-auto mt-4 bg-white border rounded-md shadow-lg sm:py-32" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
             <div className="px-6 mx-auto max-w-7xl lg:px-8">
                 <div className="max-w-2xl mx-auto lg:mx-0">
                     <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">From the blog</h2>
