@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div className='container mx-auto'>
-            <div>
+            <div className='p-6 mb-6 border rounded-md shadow-lg' data-aos="fade-up">
                 <p className='font-bold'><span className='text-2xl text-red-600'>Question:</span> What is an access token and refresh token? How do they work and where should we store them on the client-side?</p>
                 <p><span className='text-green-600'>Answer:</span> An access token is a short-lived credential that grants access to specific resources after authentication.
                     A refresh token is a long-lived credential used to obtain new access tokens when the current one expires.
@@ -12,7 +12,7 @@ const Blog = () => {
                     Access tokens can be stored in memory or in an HTTP-only cookie.
                     Refresh tokens should be stored securely in an HTTP-only cookie or local storage with encryption and secure flags.</p>
             </div>
-            <div>
+            <div className='p-6 mb-6 border rounded-md shadow-lg' data-aos="fade-up">
                 <p className='font-bold'><span className='text-2xl text-red-600'>Question:</span> Compare SQL and NoSQL databases?</p>
                 <p><span className='text-green-600'>Answer:</span> SQL Databases:
 
@@ -29,7 +29,7 @@ const Blog = () => {
                     They are well-suited for handling unstructured or semi-structured data and can accommodate evolving data needs.
                     NoSQL databases are commonly used in modern web applications, real-time analytics, content management systems, and other scenarios with changing data structures or high scalability requirements.</p>
             </div>
-            <div>
+            <div className='p-6 mb-6 border rounded-md shadow-lg' data-aos="fade-up">
                 <p className='font-bold'><span className='text-2xl text-red-600'>Question:</span> What is express js? What is Nest JS ?</p>
                 <p><span className='text-green-600'>Answer:</span> Express.js is a fast, minimalistic, and flexible web application framework for Node.js.
                     It provides a simple and intuitive API for building web servers and APIs.
@@ -45,7 +45,7 @@ const Blog = () => {
                     Nest.js promotes a modular and testable codebase, making it suitable for complex enterprise applications.
                     It leverages the power of TypeScript and brings strong typing and tooling support to Node.js development.</p>
             </div>
-            <div>
+            <div className='p-6 mb-6 border rounded-md shadow-lg' data-aos="fade-up">
                 <p className='font-bold'><span className='text-2xl text-red-600'>Question:</span> What is MongoDB aggregate and how does it work ?</p>
                 <p><span className='text-green-600'>Answer:</span> MongoDB's aggregate is a method for performing complex data manipulations and computations on collections. It works by processing data through a pipeline of stages, where each stage performs a specific operation on the data. It allows for tasks such as filtering, grouping, sorting, and aggregating data within MongoDB. The output is the result of the processed data based on the defined stages.</p>
             </div>

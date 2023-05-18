@@ -23,7 +23,8 @@ import Blog from "../Pages/Blog/Blog";
           },
           {
             path: '/addtoy',
-            element: <AddToys></AddToys>
+            element: <AddToys></AddToys>,
+            loader: () => fetch('http://localhost:5000/toys')
           },
           {
             path: '/alltoys',
