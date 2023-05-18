@@ -4,7 +4,7 @@ import SingleToy from './SingleToy';
 const ShopSection = () => {
     const [toys, setToys] = useState([])
     useEffect(() => {
-        fetch('../../public/toys.json')
+        fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
@@ -13,10 +13,10 @@ const ShopSection = () => {
             <h3 className='text-4xl text-center'>TotalToys: {toys.length}</h3>
 
 
-            <div className='container grid grid-cols-3 gap-4 mx-auto'>
+            <div className='container grid-cols-3 gap-4 mx-auto md:grid lg:grid'>
                 {
                     toys.map(singleToy=> <SingleToy
-                    key={singleToy.price}
+                    key={singleToy._id}
                     singleToy={singleToy}
                     
                     ></SingleToy>)

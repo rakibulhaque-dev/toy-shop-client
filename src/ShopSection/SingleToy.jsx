@@ -12,7 +12,7 @@ const SingleToy = ({ singleToy }) => {
                 <p>Price: {price}</p>
                 <p>Rating: {rating}</p>
                 <p>Seller: {sellerName}</p>
-                <Link to={`toydetails/${_id}`}>View Details</Link>
+                <Link to={`/toydetails/${_id}`}>View Details</Link>
             </div>
         </div>
     );
