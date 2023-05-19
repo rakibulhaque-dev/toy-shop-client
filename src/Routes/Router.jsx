@@ -32,11 +32,6 @@ import MyToy from "../Pages/MyToy/MyToy";
             element: <PrivateRoute><ShopSection></ShopSection></PrivateRoute>
           },
           {
-            path: '/toydetails/:id',
-            element: <ToyDetails></ToyDetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
-          },
-          {
             path: '/blogs',
             element: <Blog></Blog>
           },
@@ -45,6 +40,11 @@ import MyToy from "../Pages/MyToy/MyToy";
             element: <PrivateRoute> <MyToy></MyToy> </PrivateRoute>
           }
         ],
+    },
+    {
+      path: '/toydetails/:id',
+      element: <ToyDetails></ToyDetails>,
+      loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
     },
     {
       path: '/login',
