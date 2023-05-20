@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ToyRow = ({ toy, handleDelete }) => {
     const { photo, toyName, sellerName, price, _id } = toy;
     
-   
 
     return (
         <tr>
@@ -22,7 +22,7 @@ const ToyRow = ({ toy, handleDelete }) => {
             <td>{sellerName}</td>
             <td>{price}</td>
             <th>
-                <button className="rounded-md btn-secondary btn-sm">Edit</button>
+                <Link to={`/update/${_id}`} className="rounded-md btn-secondary btn-sm">Edit</Link>
             </th>
             <th>
                 <button className="btn btn-error btn-sm" onClick={()=>handleDelete(_id)}>

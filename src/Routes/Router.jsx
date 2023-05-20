@@ -12,6 +12,7 @@ import ShopSection from "../ShopSection/ShopSection";
 import ToyDetails from "../ShopSection/ToyDetails";
 import Blog from "../Pages/Blog/Blog";
 import MyToy from "../Pages/MyToy/MyToy";
+import UpdateToy from "../Pages/MyToy/UpdateToy";
 
   const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ import MyToy from "../Pages/MyToy/MyToy";
           {
             path: '/mytoys',
             element: <PrivateRoute> <MyToy></MyToy> </PrivateRoute>
+          },
+          {
+            path: '/update/:id',
+            element: <UpdateToy></UpdateToy>,
+            loader: ({params}) => fetch(`https://eleven-toy-server.vercel.app/createToy/${params.id}`)
           }
         ],
     },
