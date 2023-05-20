@@ -1,6 +1,7 @@
 import React from 'react';
 import ToyBanner from '../../src/assets/images/banner-toy.png'
 import { Link } from 'react-router-dom';
+import Gallary from '../Pages/Gallary/Gallary';
 const Banner = () => {
     return (
         <div className='container mx-auto' data-aos="flip-right">
@@ -13,6 +14,7 @@ const Banner = () => {
                 </div>
                 <img className='w-96 h-72' src={ToyBanner} alt="" />
             </div>
+            <Gallary></Gallary>
         </div>
     );
 };

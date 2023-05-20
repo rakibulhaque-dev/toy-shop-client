@@ -96,7 +96,7 @@ const AddToys = () => {
                         <label className="label">
                             <span className="label-text">Sub Category</span>
                         </label>
-                        <input type="number" name="subCategory" placeholder='Sub Category' className="input input-bordered" />
+                        <input type="text" name="subCategory" placeholder='Sub Category' className="input input-bordered" />
                     </div>
                    
                     <div className="form-control">
