@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import ShopRow from './ShopRow';
+import { BeatLoader } from 'react-spinners';
 
 const ShopSection = () => {
+  const [loading, setLoading] = useState(true);
+  
   const [toys, setToys] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [totalResults, setTotalResults] = useState(0);
 
   useEffect(() => {
+    setLoading(true)
     fetch('https://eleven-toy-server.vercel.app/toys')
       .then(res => res.json())
       .then(data => {
         setToys(data);
         setTotalResults(data.length);
+        setLoading(false)
       });
   }, []);
 
@@ -33,6 +38,7 @@ const ShopSection = () => {
   return (
     <div className="container mx-auto">
       <div className="w-full overflow-x-auto">
+
         <div className="flex items-center mb-4">
           <input
             type="text"
@@ -59,7 +65,7 @@ const ShopSection = () => {
           </thead>
           <tbody>
             {filteredToys.map(toy => (
-              <ShopRow key={toy._id} toy={toy} />
+              <ShopRow key={toy._id} toy={toy} loading={loading} />
             ))}
           </tbody>
         </table>

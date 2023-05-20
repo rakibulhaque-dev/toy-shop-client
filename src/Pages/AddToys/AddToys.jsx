@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AddToys = () => {
     const data = useLoaderData()
@@ -45,7 +46,7 @@ const AddToys = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('service book successfully')
+                    toast('Added Successfully')
                 }
             })
 
@@ -119,6 +120,8 @@ const AddToys = () => {
             <div className="card-body">
 
             </div>
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

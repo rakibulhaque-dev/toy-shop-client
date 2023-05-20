@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 
+
+
 const UpdateToy = () => {
+
     const {id} = useParams()
-    console.log(id)
+   
     return (
         <div className='container mx-auto'>
             <h2 className='font-bold text-center text-secondary'>Update Toy: ID-{id}</h2>
