@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ShopRow = ({ toy }) => {
-    const { photo, sellerName, toyName, category, quantity, price } = toy;
+    const { _id, photo, sellerName, toyName, category, quantity, price } = toy;
 
     return (
-        <tr>
+        <tr className='container mx-auto'>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -27,10 +28,10 @@ const ShopRow = ({ toy }) => {
                 {quantity}
             </td>
             <td>
-                {quantity}
+                {'category'}
             </td>
             <th>
-                <button className="btn btn-error btn-sm">Delete</button>
+                <Link to={`/toydetails/${_id}`} className='btn btn-sm btn-secondary'>View Details</Link>
             </th>
         </tr>
 
