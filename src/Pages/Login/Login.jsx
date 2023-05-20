@@ -27,7 +27,7 @@ const Login = () => {
                 console.log(loggedUser)
 
                 // TODO: jwt 
-                // fetch('http://localhost:5000/jwt', {
+                // fetch('https://eleven-toy-server.vercel.app/jwt', {
                 //     method: 'POST',
                 //     headers: {
                 //         'content-type': 'application/json'

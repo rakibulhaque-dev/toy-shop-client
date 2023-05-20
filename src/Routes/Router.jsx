@@ -25,7 +25,7 @@ import MyToy from "../Pages/MyToy/MyToy";
           {
             path: '/addtoy',
             element: <PrivateRoute> <AddToys></AddToys> </PrivateRoute>,
-            loader: () => fetch('http://localhost:5000/toys')
+            loader: () => fetch('https://eleven-toy-server.vercel.app/toys')
           },
           {
             path: '/alltoys',
@@ -44,7 +44,7 @@ import MyToy from "../Pages/MyToy/MyToy";
     {
       path: '/toydetails/:id',
       element: <ToyDetails></ToyDetails>,
-      loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+      loader: ({params}) => fetch(`https://eleven-toy-server.vercel.app/toys/${params.id}`)
     },
     {
       path: '/login',

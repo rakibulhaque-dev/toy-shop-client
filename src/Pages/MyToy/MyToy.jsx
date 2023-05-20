@@ -8,7 +8,7 @@ const MyToy = () => {
     console.log(user)
     console.log(toys)
     useEffect(() => {
-        fetch('http://localhost:5000/createToy')
+        fetch('https://eleven-toy-server.vercel.app/createToy')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])

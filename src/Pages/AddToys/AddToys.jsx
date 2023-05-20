@@ -34,7 +34,7 @@ const AddToys = () => {
 
         console.log(newToy);
 
-        fetch('http://localhost:5000/createToy', {
+        fetch('https://eleven-toy-server.vercel.app/createToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
