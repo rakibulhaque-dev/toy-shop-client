@@ -1,17 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ToyRow from './ToyRow';
 import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../../providers/AuthProvider';
+import { MoonLoader } from 'react-spinners';
 
 const MyToy = () => {
+    const { setLoading, loading } = useContext(AuthContext)
     const [toys, setToys] = useState([]);
     const [sortOrder, setSortOrder] = useState('ascending');
 
+
     useEffect(() => {
+
         fetch('https://eleven-toy-server.vercel.app/createToy')
             .then(res => res.json())
-            .then(data => setToys(data));
+            .then(data => {
+                setToys(data)
+            });
     }, []);
 
+
+    //DELETE  handleDelete toy
     const handleDelete = (id) => {
         const proceed = confirm('Are you sure?');
         if (proceed) {
@@ -33,6 +42,8 @@ const MyToy = () => {
         }
     };
 
+
+    // handleDataSort to My Toys Page
     const handleSort = () => {
         const sortedToys = [...toys].sort((a, b) => {
             if (sortOrder === 'ascending') {
@@ -53,7 +64,6 @@ const MyToy = () => {
             <div className='container mx-auto mt-4'>
                 <div className="w-full overflow-x-auto">
                     <table className="table w-full">
-                        {/* head */}
                         <thead>
                             <tr>
                                 <th>
@@ -65,30 +75,38 @@ const MyToy = () => {
                                         {sortOrder === 'ascending' ? '▲' : '▼'}
                                     </button>
                                 </th>
-                                <th>Name</th>
+                                <th>Toy</th>
                                 <th>Seller</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {toys
-                                .sort((a, b) => {
-                                    if (sortOrder === 'ascending') {
-                                        return a.name < b.name ? -1 : 1;
-                                    } else {
-                                        return a.name > b.name ? -1 : 1;
-                                    }
-                                })
-                                .map(toy => (
-                                    <ToyRow
-                                        key={toy._id}
-                                        toy={toy}
-                                        handleDelete={handleDelete}
-                                    />
-                                ))}
-                        </tbody>
+
+                        {
+                            loading ?
+                                <MoonLoader color="#36d7b7" />
+                                : <tbody>
+                                    {toys.sort((a, b) => {
+                                        if (sortOrder === 'ascending') {
+                                            return a.name < b.name ? -1 : 1;
+                                        } else {
+                                            return a.name > b.name ? -1 : 1;
+                                        }
+                                    })
+                                        .map(toy => (
+                                            <ToyRow
+                                                key={toy._id}
+                                                toy={toy}
+                                                handleDelete={handleDelete}
+                                                setToys={setToys}
+                                                toys={toys}
+                                            />
+                                        ))}
+                                </tbody>
+                        }
+
                     </table>
                 </div>
             </div>

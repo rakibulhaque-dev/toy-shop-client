@@ -42,8 +42,7 @@ import UpdateToy from "../Pages/MyToy/UpdateToy";
           },
           {
             path: '/update/:id',
-            element: <UpdateToy></UpdateToy>,
-            loader: ({params}) => fetch(`https://eleven-toy-server.vercel.app/createToy/${params.id}`)
+            element: <UpdateToy></UpdateToy>
           }
         ],
     },

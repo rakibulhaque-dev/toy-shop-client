@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import userpic from '../../assets/images/gallary/user.png'
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -16,10 +16,10 @@ const NavBar = () => {
     }
 
     const navItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
-        <li><Link to='/addtoy'>Add Toys</Link></li>
-        <li><Link to='/alltoys'>All Toy</Link></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/blogs'>Blogs</NavLink></li>
+        <li><NavLink to='/addtoy'>Add Toys</NavLink></li>
+        <li><NavLink to='/alltoys'>All Toy</NavLink></li>
 
         {user?.email ?
             <>

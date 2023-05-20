@@ -19,7 +19,7 @@ const Home = () => {
             <NavBar></NavBar>
             <Outlet data-aos='fade-up'></Outlet>
             <ShopCategory data-aos="fade-up"></ShopCategory>
-            <ExtraSection data-aos="fade-up"></ExtraSection>
+            <ExtraSection data-aos="fade-up-right"></ExtraSection>
             <Stats data-aos="fade-up"></Stats>
             <Footer></Footer>
         </div>

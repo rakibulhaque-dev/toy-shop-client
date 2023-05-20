@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-
+import googleSign from '../../assets/images/gallary/google.png'
 
 const Login = () => {
     const [error, setError] = useState('')
@@ -88,7 +88,7 @@ const Login = () => {
                                     <label className="label">
                                         <Link href="/" className="label-text-alt link link-hover">Forgot password?</Link>
                                     </label>
-                                    <div>
+                                    <div className='text-red-600'>
                                         {
                                             error ? <p>{error}</p> : ''
                                         }
@@ -104,7 +104,11 @@ const Login = () => {
                             <div className="flex flex-col w-full border-opacity-50">
                                 <div className="divider">OR</div>
                                 <div className="grid h-20 card bg-base-300 rounded-box place-items-center">
-                                    <button className='btn btn-secondary' onClick={handleGoogle}>Login with Google</button>
+
+                                    <Link>
+                                        <img onClick={handleGoogle} src={googleSign} alt="" />
+                                    </Link>
+
                                 </div>
                             </div>
                         </div>

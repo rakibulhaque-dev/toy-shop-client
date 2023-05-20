@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ShopRow from './ShopRow';
 import { BeatLoader } from 'react-spinners';
 
 const ShopSection = () => {
   const [loading, setLoading] = useState(true);
-  
-  const [toys, setToys] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [totalResults, setTotalResults] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
 
+
+  // load all toys
+  const [toys, setToys] = useState([]);
   useEffect(() => {
     setLoading(true)
     fetch('https://eleven-toy-server.vercel.app/toys')
@@ -19,6 +20,8 @@ const ShopSection = () => {
         setLoading(false)
       });
   }, []);
+
+
 
   const handleSearch = event => {
     setSearchTerm(event.target.value);

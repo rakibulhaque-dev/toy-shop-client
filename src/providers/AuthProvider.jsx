@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
 
-    const createUser = (email, password) => {
+        const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -25,12 +25,13 @@ const AuthProvider = ({ children }) => {
     }
 
     const signInGoogle = () => {
-       return signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
     }
 
     const logOut = () => {
         return signOut(auth);
     }
+
 
 
     useEffect(() => {
@@ -52,7 +53,8 @@ const AuthProvider = ({ children }) => {
         setUser,
         signIn,
         logOut,
-        signInGoogle
+        signInGoogle,
+        setLoading
     }
 
     return (
