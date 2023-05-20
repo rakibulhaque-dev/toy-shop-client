@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddToys = () => {
     const data = useLoaderData()
@@ -47,13 +48,15 @@ const AddToys = () => {
                 console.log(data);
                 if (data.insertedId) {
                     toast('Added Successfully')
+                    form.reset()
                 }
             })
-
-    }
-
-    return (
-        <div className='container mx-auto'>
+            
+        }
+        
+        return (
+            <div className='container mx-auto'>
+            <ToastContainer></ToastContainer>
             <h2 className='text-3xl font-bold text-center text-secondary mb-7'> Add a Toy </h2>
             <form onSubmit={handleToyAdd}>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -121,7 +124,6 @@ const AddToys = () => {
 
             </div>
 
-            <ToastContainer></ToastContainer>
         </div>
     );
 };

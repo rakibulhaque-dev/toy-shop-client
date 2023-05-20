@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ToyRow from './ToyRow';
+import { ToastContainer, toast } from 'react-toastify';
 
 const MyToy = () => {
     const [toys, setToys] = useState([]);
@@ -21,7 +22,7 @@ const MyToy = () => {
                 .then(data => {
                     console.log('Toy deleted:', data);
                     if (data.deletedCount > 0) {
-                        alert('Deleted successfully...');
+                        toast('Deleted successfully...');
                         const remaining = toys.filter(toy => toy._id !== id);
                         setToys(remaining);
                     }
@@ -48,7 +49,7 @@ const MyToy = () => {
     return (
         <>
             <p className='font-extrabold text-center'>My total toy: <span className='text-3xl text-secondary'>{toys.length}</span> items</p>
-
+            <ToastContainer></ToastContainer>
             <div className='container mx-auto mt-4'>
                 <div className="w-full overflow-x-auto">
                     <table className="table w-full">
