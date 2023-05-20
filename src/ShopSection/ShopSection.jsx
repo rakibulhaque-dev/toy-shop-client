@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleToy from './SingleToy';
+import ShopRow from './ShopRow';
 
 const ShopSection = () => {
     const [toys, setToys] = useState([])
@@ -10,19 +11,29 @@ const ShopSection = () => {
     }, [])
     return (
         <div>
-            <h3 className='text-4xl text-center'>TotalToys: {toys.length}</h3>
-
-
-            <div className='container grid-cols-3 gap-4 mx-auto md:grid lg:grid'>
-                {
-                    toys.map(singleToy=> <SingleToy
-                    key={singleToy._id}
-                    singleToy={singleToy}
-                    
-                    ></SingleToy>)
-                }
+            <div className="w-full overflow-x-auto">
+                <table className="table w-full">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>Toy Name</th>
+                            <th>Seller</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            toys.map(toy => <ShopRow
+                            key={toy._id}
+                            toy={toy}
+                            ></ShopRow>)
+                        }
+                    </tbody>
+                </table>
             </div>
-
         </div>
     );
 };
