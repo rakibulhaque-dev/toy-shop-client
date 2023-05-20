@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
-// import logo from '../../assets/images/logo.png'
+import userpic from '../../assets/images/gallary/user.png'
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext)
 
@@ -24,6 +24,8 @@ const NavBar = () => {
         {user?.email ?
             <>
                 <li><Link to='/mytoys'>My Toys</Link></li>
+                {/* user photo  */}
+                {user.photoURL ? <img className='w-5 h-5 my-auto rounded-full' src={user.photoURL} alt="" /> :  <img className='w-5 h-5 my-auto rounded-full' src={userpic} alt="" />}
                 <li><button onClick={handleLogOut}>Log Out</button></li>
             </>
             :
@@ -52,9 +54,6 @@ const NavBar = () => {
                     {navItems}
                 </ul>
             </div>
-            {/* <div className="navbar-end">
-                <Link to='signup' className='btn btn-sm btn-secondary'>SignUp</Link>
-            </div> */}
         </div>
     );
 };

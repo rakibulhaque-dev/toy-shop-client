@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ToyRow from './ToyRow';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const MyToy = () => {
     const [toys, setToys] = useState([])
+    const {user} = useContext(AuthContext)
+    console.log(user)
     console.log(toys)
     useEffect(() => {
         fetch('http://localhost:5000/createToy')
