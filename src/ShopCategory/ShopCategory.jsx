@@ -27,6 +27,7 @@ const ShopCategory = () => {
                             toys.slice(0, 3).map(toy => <SingleToy
                                 key={toy._id}
                                 singleToy={toy}
+                                data-aos='fade-up-left'
                             ></SingleToy>)
                         }
                     </div>

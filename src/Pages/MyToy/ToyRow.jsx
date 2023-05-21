@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ToyRow = ({ toy, handleDelete , toys}) => {
+const ToyRow = ({ toy, handleDelete }) => {
     
     const { photo, toyName, sellerName, price, _id, quantity } = toy;
 
     return (
-        <tr>
+        <tr data-aos='fade-up-right'>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">

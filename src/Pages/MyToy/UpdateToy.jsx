@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import NavBar from '../../Shared/NavBar/NavBar';
+import Footer from '../../Shared/Footer/Footer';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateToy = () => {
+    useTitle('Update')
     const {id}  = useParams();
     const [toys, setToys] =useState([])
     console.log(id)
@@ -46,6 +50,7 @@ const UpdateToy = () => {
 
     return (
         <div className='container mx-auto'>
+            <NavBar></NavBar>
             <h2 className='font-bold text-center text-secondary'>Update Toy: ID-{id}</h2>
             <ToastContainer></ToastContainer>
             <form onSubmit={handleConfirm}>
@@ -71,6 +76,7 @@ const UpdateToy = () => {
                     <input type='submit' value="Confirm" className="btn btn-success" />
                 </div>
             </form>
+            <Footer></Footer>
         </div>
     );
 };

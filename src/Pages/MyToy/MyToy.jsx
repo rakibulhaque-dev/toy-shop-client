@@ -3,8 +3,10 @@ import ToyRow from './ToyRow';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProvider';
 import { MoonLoader } from 'react-spinners';
+import useTitle from '../../hooks/useTitle';
 
 const MyToy = () => {
+    useTitle('My Toy')
     const { setLoading, loading } = useContext(AuthContext)
     const [toys, setToys] = useState([]);
     const [sortOrder, setSortOrder] = useState('ascending');

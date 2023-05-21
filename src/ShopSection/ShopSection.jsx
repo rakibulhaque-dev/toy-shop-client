@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ShopRow from './ShopRow';
-import { BeatLoader } from 'react-spinners';
+import useTitle from '../hooks/useTitle';
 
 const ShopSection = () => {
+  useTitle('Shop')
   const [loading, setLoading] = useState(true);
   const [totalResults, setTotalResults] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');

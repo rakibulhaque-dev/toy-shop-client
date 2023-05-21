@@ -40,16 +40,17 @@ import UpdateToy from "../Pages/MyToy/UpdateToy";
             path: '/mytoys',
             element: <PrivateRoute> <MyToy></MyToy> </PrivateRoute>
           },
-          {
-            path: '/update/:id',
-            element: <UpdateToy></UpdateToy>
-          }
+        
         ],
     },
     {
       path: '/toydetails/:id',
       element: <ToyDetails></ToyDetails>,
       loader: ({params}) => fetch(`https://eleven-toy-server.vercel.app/toys/${params.id}`)
+    },
+    {
+      path: '/update/:id',
+      element: <UpdateToy></UpdateToy>
     },
     {
       path: '/login',

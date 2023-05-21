@@ -7,9 +7,12 @@ import NavBar from '../Shared/NavBar/NavBar';
 import ShopCategory from '../ShopCategory/ShopCategory';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from '../hooks/useTitle';
 
 
 const Home = () => {
+    useTitle('Welcome')
+
     useEffect(()=>{
         AOS.init();
     }, [])
@@ -17,8 +20,8 @@ const Home = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <Outlet data-aos='fade-up'></Outlet>
-            <ShopCategory data-aos="fade-up"></ShopCategory>
+            <Outlet data-aos='fade-down'></Outlet>
+            <ShopCategory></ShopCategory>
             <ExtraSection data-aos="fade-up-right"></ExtraSection>
             <Stats data-aos="fade-up"></Stats>
             <Footer></Footer>
