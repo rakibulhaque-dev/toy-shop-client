@@ -4,8 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProvider';
 import { MoonLoader } from 'react-spinners';
 import useTitle from '../../hooks/useTitle';
+import { useNavigate } from 'react-router-dom';
 
 const MyToy = () => {
+    const navigate = useNavigate()
     useTitle('My Toy')
     const { setLoading, loading } = useContext(AuthContext)
     const [toys, setToys] = useState([]);
@@ -14,10 +16,19 @@ const MyToy = () => {
 
     useEffect(() => {
 
-        fetch('https://eleven-toy-server.vercel.app/createToy')
+        fetch('https://eleven-toy-server.vercel.app/createToy',{
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('toy-access-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
+               if(!data.error){
                 setToys(data)
+               } else{
+                navigate('/')
+               }
             });
     }, []);
 

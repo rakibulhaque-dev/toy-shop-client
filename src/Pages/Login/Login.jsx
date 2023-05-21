@@ -43,24 +43,22 @@ const Login = () => {
                 const loggedUser = {
                     email: user.email
                 }
-                navigate(from, { replace: true })
                 console.log(loggedUser)
 
                 // TODO: jwt 
-                // fetch('https://eleven-toy-server.vercel.app/jwt', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(loggedUser)
-                // })
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         console.log(data)
-                //         localStorage.setItem('car-access-token', data.token)
-                //         navigate(from, { replace: true })
-
-                //     })
+                fetch('https://eleven-toy-server.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(loggedUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('toy-access-token', data.token)
+                        navigate(from, { replace: true })
+                    })
 
             })
             .catch(error => setError(error.message))
