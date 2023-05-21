@@ -6,7 +6,7 @@ const ToyRow = ({ toy, handleDelete }) => {
     const { photo, toyName, sellerName, price, _id, quantity } = toy;
 
     return (
-        <tr data-aos='fade-up-right'>
+        <tr>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -26,7 +26,7 @@ const ToyRow = ({ toy, handleDelete }) => {
             <td>{quantity}</td>
             <td>Action</td>
            
-            <th className='mx-auto'>
+            <th className='mx-auto' data-aos='fade-up-right'>
                 <Link to={`/update/${_id}`} className="mr-2 rounded-md btn btn-success btn-sm">Edit</Link>
                 <button className="btn btn-error btn-sm" onClick={() => handleDelete(_id)}>
                     Delete

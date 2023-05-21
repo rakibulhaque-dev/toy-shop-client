@@ -11,9 +11,8 @@ const MyToy = () => {
     useTitle('My Toy')
     const { setLoading, loading } = useContext(AuthContext)
     const [toys, setToys] = useState([]);
-    const [sortOrder, setSortOrder] = useState('ascending');
-
-
+    
+    
     useEffect(() => {
 
         fetch('https://eleven-toy-server.vercel.app/createToy',{
@@ -24,22 +23,18 @@ const MyToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-               if(!data.error){
                 setToys(data)
-               } else{
-                navigate('/')
-               }
-            });
-    }, []);
-
-
-    //DELETE  handleDelete toy
-    const handleDelete = (id) => {
-        const proceed = confirm('Are you sure?');
-        if (proceed) {
-            fetch(`https://eleven-toy-server.vercel.app/createToy/${id}`, {
-                method: 'DELETE',
-            })
+            }); 
+        }, []);
+        
+        
+        //DELETE  handleDelete toy
+        const handleDelete = (id) => {
+            const proceed = confirm('Are you sure?');
+            if (proceed) {
+                fetch(`https://eleven-toy-server.vercel.app/createToy/${id}`, {
+                    method: 'DELETE',
+                })
                 .then(response => response.json())
                 .then(data => {
                     console.log('Toy deleted:', data);
@@ -52,13 +47,14 @@ const MyToy = () => {
                 .catch(error => {
                     console.error('Error deleting toy:', error);
                 });
-        }
-    };
-
-
-    // handleDataSort to My Toys Page
-    const handleSort = () => {
-        const sortedToys = [...toys].sort((a, b) => {
+            }
+        };
+        
+        
+        // handleDataSort to My Toys Page
+        const [sortOrder, setSortOrder] = useState('ascending');
+        const handleSort = () => {
+            const sortedToys = [...toys].sort((a, b) => {
             if (sortOrder === 'ascending') {
                 return a.name < b.name ? -1 : 1;
             } else {

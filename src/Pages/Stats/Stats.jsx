@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CEO from '../../assets/images/ceo-founder.png';
 const Stats = () => {
   return (
     <div className="container py-24 mx-auto mt-4 bg-white border rounded-md shadow-lg sm:py-32" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
@@ -11,8 +11,8 @@ const Stats = () => {
         <div className="grid max-w-2xl grid-cols-1 pt-10 mx-auto mt-10 border-t border-gray-200 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <article className="flex flex-col items-start justify-between max-w-xl">
             <div className="flex items-center text-xs gap-x-4">
-              <time className="text-gray-500">Mar 16, 2020</time>
-              <a href="#" className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+              <time className="text-gray-500">May 16, 2023</time>
+              <a href="#" className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Web Development</a>
             </div>
             <div className="relative group">
               <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -21,18 +21,22 @@ const Stats = () => {
                   Boost your conversion rate
                 </a>
               </h3>
-              <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
+              <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">I am Rakib, A MERN Stack Web Developer.
+
+                I trained through 1000+ hours learning HTML, CSS, Tailwind CSS, Bootstrap, JavaScript, React.Js, Node.Js, Express.Js, and MongoDB.
+
+                I am an expert in HTML, CSS, Bootstrap, Tailwind CSS, daisyUI, JavaScript, ES6, React.js, and comfortable with Node.js, Express.js, MongoDB, Firebase. But I’m always adding new skills to my repertoire. I’m also eager to meet other Developers in the area, so feel free to connect!</p>
             </div>
             <div className="relative flex items-center mt-8 gap-x-4">
-              <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" className="w-10 h-10 rounded-full bg-gray-50"></img>
+              <img src={CEO} alt="" className="w-10 h-10 rounded-full bg-gray-50"></img>
               <div className="text-sm leading-6">
                 <p className="font-semibold text-gray-900">
                   <a href="#">
                     <span className="absolute inset-0"></span>
-                    Michael Foster
+                    Rakibul Haque, MERN Stack Developer
                   </a>
                 </p>
-                <p className="text-gray-600">Co-Founder / CTO</p>
+                <p className="text-gray-600">Co-Founder / CEO</p>
               </div>
             </div>
           </article>

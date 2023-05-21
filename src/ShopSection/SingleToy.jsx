@@ -9,7 +9,7 @@ const SingleToy = ({ singleToy }) => {
             <div className='card-body'>
                 <img src={photo} alt="" />
                 <p>Name: {toyName}</p>
-                <p>Price: {price}</p>
+                <p>Price: $ {price}</p>
                 <p>Rating: {rating}</p>
                 <p>Seller: {sellerName}</p>
                 <Link to={`/toydetails/${_id}`} className='btn btn-secondary'>View Details</Link>

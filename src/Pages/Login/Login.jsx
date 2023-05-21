@@ -1,10 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import googleSign from '../../assets/images/gallary/google.png'
 import useTitle from '../../hooks/useTitle';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Login = () => {
+
+    useEffect(() => {
+        AOS.init()
+    }, [])
+
     useTitle('Login')
     const [error, setError] = useState('')
 
@@ -44,21 +50,21 @@ const Login = () => {
                     email: user.email
                 }
                 console.log(loggedUser)
+                navigate(from, { replace: true })
 
-                // TODO: jwt 
-                fetch('https://eleven-toy-server.vercel.app/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(loggedUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        localStorage.setItem('toy-access-token', data.token)
-                        navigate(from, { replace: true })
-                    })
+                // // TODO: jwt 
+                // fetch('https://eleven-toy-server.vercel.app/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(loggedUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data)
+                //         localStorage.setItem('toy-access-token', data.token)
+                //     })
 
             })
             .catch(error => setError(error.message))
@@ -67,10 +73,10 @@ const Login = () => {
     return (
         <>
 
-            <div className="min-h-screen hero bg-base-200">
-                <div className="flex-col hero-content lg:flex-row">
+            <div className="min-h-screen data-aos='fade-up-left' shadow-lg hero bg-base-200 ">
+                <div className="flex-col hero-content lg:flex-row" data-aos='fade-up-left'>
                     <div className="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
-                        <div className="card-body">
+                        <div className="shadow-lg card-body shadow-warning-300">
                             <h1 className="text-3xl font-bold text-center text-secondary">Login</h1>
                             {/* form here  */}
                             <form onSubmit={handleLogin}>
